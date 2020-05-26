@@ -3,13 +3,12 @@
 #include <cppx-core-language/all.hpp>
 
 namespace winapi::integration {
-    $use_cppx( Size );
 
     class Abstract_image_displayer
     {
     public:
-        virtual auto width() const  -> Size = 0;
-        virtual auto height() const -> Size = 0;
+        virtual auto width() const  -> long = 0;
+        virtual auto height() const -> long = 0;
 
         virtual void display_on( const HDC dc ) const = 0;
         virtual void stretch_display_on( const HDC dc, const RECT& rect ) const = 0;
